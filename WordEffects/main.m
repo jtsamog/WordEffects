@@ -20,13 +20,34 @@ int main(int argc, const char * argv[]) {
         //convert char array to an NSString object
         NSString *inputString = [[NSString stringWithUTF8String:inputChars] stringByReplacingOccurrencesOfString:@"\n" withString:@""];
         
-        NSLog(@" line %d: The string you entered is: %@",__LINE__, inputString);
+        NSLog(@" line %d: The string you entered is: %@  %p %p",__LINE__, inputString, &inputString, *&inputString);
+//        NSLog(@" line %d: Memory Address is: %p while Value is: %p",__LINE__, &inputString, *&inputString);
+//        NSLog(@" line %d: Memory Address is: %p",__LINE__, &inputString);
+//        NSLog(@" line %d: Value is: %p",__LINE__, *&inputString);
         
         
         
-        
-        
-        
+        while (YES) {
+            NSLog(@"Which operation would you want to do?\n 1) Uppercase\n 2) Lowercase\n 3) Canadianize\n 4) De-space it\n 5) Respond\n 6) Numberize");
+            
+            int optionNumber = 0;
+            scanf("%d", &optionNumber);
+            
+            if (optionNumber == 1) {
+                NSLog(@" line %d: Your text is printed in Uppercase: %@ %p  %p",__LINE__, inputString.uppercaseString, &inputString, *&inputString); //take whatever string the user inputs and MAKE IT LOUDER!
+//                NSLog(@" line %d: Memory Address is: %p while Value is: %p",__LINE__, &inputString, *&inputString);
+                
+            }
+            else if (optionNumber == 2) {
+                NSLog(@" line %d: Your text is printed in lowercase: %@  %p  %p",__LINE__, inputString.lowercaseString, &inputString, *&inputString); //take whatever string the user inputs and make it lowercase
+//                NSLog(@" line %d: Memory Address is: %p while Value is: %p",__LINE__, &inputString, *&inputString);
+            }
+            else if (optionNumber == 3) {
+                
+            }
+            
+            
+        }
     }
     return 0;
 }
