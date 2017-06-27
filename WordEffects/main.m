@@ -43,9 +43,33 @@ int main(int argc, const char * argv[]) {
 //                NSLog(@" line %d: Memory Address is: %p while Value is: %p",__LINE__, &inputString, *&inputString);
             }
             else if (optionNumber == 3) {
-                
+                NSString *canadianize = @", eh?";
+                NSLog(@"Canadianized version: %@", [[inputString uppercaseString] stringByAppendingString:canadianize]);
             }
-            
+            else if (optionNumber == 4) {
+                NSLog(@"Despaced text as: %@", [[inputString stringByReplacingOccurrencesOfString:@" " withString:@"-"] uppercaseString]);
+            }
+            else if (optionNumber == 5) {
+                if ([inputString hasSuffix:@"?"]) {
+                    NSLog(@"I dont know");
+                }
+                else if ([inputString hasSuffix:@"!"]) {
+                    NSLog(@"Whoa! Calm down");
+                }
+            }
+            else if (optionNumber == 6) {
+                if ([inputString rangeOfCharacterFromSet:[NSCharacterSet characterSetWithCharactersInString:@"0123456789"]].location != NSNotFound) {
+                    
+                    int inputInt = [inputString intValue];
+                    NSLog(@"NSString '%d' converted to Int", inputInt);
+                    
+                }else{
+                    NSLog(@"Input '%@' should be a number", inputString);
+                    }
+            }
+            else {
+            NSLog(@"Input shopuld be a number");
+            }
             
         }
     }
